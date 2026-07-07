@@ -18,7 +18,7 @@ export function Button({
   return (
     <button
       className={cx(
-        button({ variant, size, borderRadius, disabled, onClick }),
+        button({ variant, size, borderRadius, disabled }),
         className,
       )}
       onClick={disabled ? undefined : onClick}

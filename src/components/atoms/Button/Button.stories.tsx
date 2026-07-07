@@ -24,6 +24,7 @@ export const Example: Story = {
     variant: "primary",
     size: "md",
     borderRadius: "md",
+    onClick: () => alert("Clicked!"),
   },
 };
 
