@@ -7,7 +7,7 @@ import {
   lineHeights,
   semanticTokens,
 } from "./src/tokens";
-import { ButtonRecipe } from "./src/components/atoms/index.ts";
+import { buttonRecipe, inputRecipe } from "./src/components/atoms/index.ts";
 
 export default defineConfig({
   // Whether to use css reset
@@ -16,18 +16,22 @@ export default defineConfig({
   include: ["./src/**/*.{ts,tsx}", "./pages/**/*.{ts,tsx}"],
   // Files to exclude
   exclude: ["./src/**/*.stories.tsx"],
+  staticCss: {
+    recipes: {
+      button: ["*"],
+      input: ["*"],
+    },
+  },
   theme: {
     extend: {
       tokens: { colors, fonts, fontSizes, fontWeights, lineHeights },
       semanticTokens,
       recipes: {
-        button: ButtonRecipe,
+        button: buttonRecipe,
       },
-    },
-  },
-  staticCss: {
-    recipes: {
-      button: ["*"],
+      slotRecipes: {
+        input: inputRecipe,
+      },
     },
   },
   jsxFramework: "react",

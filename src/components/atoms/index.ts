@@ -1,1 +1,2 @@
-export { buttonRecipe as ButtonRecipe } from "./Button/Button.recipe";
+export { buttonRecipe } from "./Button/Button.recipe";
+export { inputRecipe } from "./Input/Input.recipe";
