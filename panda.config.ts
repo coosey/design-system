@@ -7,7 +7,12 @@ import {
   lineHeights,
   semanticTokens,
 } from "./src/tokens";
-import { buttonRecipe, inputRecipe } from "./src/components/atoms/index.ts";
+import {
+  buttonRecipe,
+  inputRecipe,
+  checkboxRecipe,
+  radioRecipe,
+} from "./src/components/atoms/index.ts";
 
 export default defineConfig({
   // Whether to use css reset
@@ -20,6 +25,8 @@ export default defineConfig({
     recipes: {
       button: ["*"],
       input: ["*"],
+      checkbox: ["*"],
+      radio: ["*"],
     },
   },
   theme: {
@@ -31,6 +38,8 @@ export default defineConfig({
       },
       slotRecipes: {
         input: inputRecipe,
+        checkbox: checkboxRecipe,
+        radio: radioRecipe,
       },
     },
   },
