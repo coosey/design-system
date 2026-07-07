@@ -21,6 +21,7 @@ export function Button({
         button({ variant, size, borderRadius, disabled }),
         className,
       )}
+      disabled={disabled}
       onClick={disabled ? undefined : onClick}
       {...rest}
     />
