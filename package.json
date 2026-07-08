@@ -33,6 +33,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.27.19",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
