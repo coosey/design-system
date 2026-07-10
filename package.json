@@ -23,7 +23,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && panda cssgen --outfile dist/styles.css",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss,md,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css,json,md}\"",
     "preview": "vite preview",
     "storybook": "panda codegen && storybook dev -p 6006",
     "build-storybook": "panda codegen && storybook build",
@@ -39,6 +41,8 @@
   },
   "devDependencies": {
     "@babel/core": "^8.0.1",
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^10.0.1",
     "@pandacss/dev": "^1.11.4",
     "@rolldown/plugin-babel": "^0.2.3",
@@ -47,7 +51,6 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
-    "@types/babel__core": "^7.20.5",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
