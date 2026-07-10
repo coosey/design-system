@@ -17,6 +17,7 @@ const fontSizes = defineTokens.fontSizes({
 });
 
 const fontWeights = defineTokens.fontWeights({
+  regular: { value: 400 },
   medium: { value: 500 },
   bold: { value: 700 },
   extrabold: { value: 800 },

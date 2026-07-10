@@ -13,6 +13,7 @@ import {
   checkboxRecipe,
   radioRecipe,
   selectRecipe,
+  textRecipe,
 } from "./src/components/atoms/index.ts";
 
 export default defineConfig({
@@ -29,6 +30,7 @@ export default defineConfig({
       checkbox: ["*"],
       radio: ["*"],
       select: ["*"],
+      text: ["*"],
     },
   },
   theme: {
@@ -37,6 +39,7 @@ export default defineConfig({
       semanticTokens,
       recipes: {
         button: buttonRecipe,
+        text: textRecipe,
       },
       slotRecipes: {
         input: inputRecipe,
