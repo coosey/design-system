@@ -5,3 +5,4 @@ export { radioRecipe } from "./Radio/Radio.recipe";
 export { selectRecipe } from "./Select/Select.recipe";
 export { textRecipe } from "./Text/Text.recipe";
 export { cardRecipe } from "./Card/Card.recipe";
+export { modalRecipe } from "./Modal/Modal.recipe";

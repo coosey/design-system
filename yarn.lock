@@ -3081,6 +3081,21 @@ flatted@^3.2.9:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.4.2.tgz#f5c23c107f0f37de8dbdf24f13722b3b98d52726"
   integrity sha512-PjDse7RzhcPkIJwy5t7KPWQSZ9cAbzQXcafsetQoD7sOJRQlGikNbx7yZp2OotDnJyrDcbyRq3Ttb18iYOqkxA==
 
+focus-trap-react@^12.0.3:
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/focus-trap-react/-/focus-trap-react-12.0.3.tgz#710dd253934ba34b7f06abaa55be441ad7923b94"
+  integrity sha512-4eXtzhRTtFrxle9Tkl0Wkj8SFJnWz3i3yb5e53Mdn4E8XZQ/Lzqom9U4uUAJ8wd7yDmyGVP96dxwQZXLXd4sbg==
+  dependencies:
+    focus-trap "^8.2.2"
+    tabbable "^6.5.0"
+
+focus-trap@^8.2.2:
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-8.2.2.tgz#6e8a203f2228ca8b5eb95465433e69a5d5e48387"
+  integrity sha512-qV0g8hRYBqgACcFOH3f9wXc4zPKhr/0z9RI2a6ZijZ72EeBi4g8oBy8zAWuUR1TsMpOzwpUMFvjdasrC41Joug==
+  dependencies:
+    tabbable "^6.5.0"
+
 forwarded@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.2.0.tgz#2269936428aad4c15c7ebe9779a84bf0b2a81811"
@@ -4623,7 +4638,7 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-tabbable@^6.0.0:
+tabbable@^6.0.0, tabbable@^6.5.0:
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-6.5.0.tgz#a65101385a4fd6cbd580b7546da0170f307b535d"
   integrity sha512-wieBHXygIm7OyQOu5hQlkk62/WyCFYGlWg7L6/ZCUZwx0o398Zkn4pVmMyfYhfMG8kGrj/Krt8eIk6UKC6VzwA==

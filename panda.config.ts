@@ -15,6 +15,7 @@ import {
   selectRecipe,
   textRecipe,
   cardRecipe,
+  modalRecipe,
 } from "./src/components/atoms/index.ts";
 
 export default defineConfig({
@@ -33,6 +34,7 @@ export default defineConfig({
       select: ["*"],
       text: ["*"],
       card: ["*"],
+      modal: ["*"],
     },
   },
   theme: {
@@ -49,6 +51,7 @@ export default defineConfig({
         radio: radioRecipe,
         select: selectRecipe,
         card: cardRecipe,
+        modal: modalRecipe,
       },
     },
   },
