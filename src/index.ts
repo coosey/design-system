@@ -4,3 +4,4 @@ export * from "./components/atoms/Checkbox";
 export * from "./components/atoms/Radio";
 export * from "./components/atoms/Select";
 export * from "./components/atoms/Text";
+export * from "./components/atoms/Card";
