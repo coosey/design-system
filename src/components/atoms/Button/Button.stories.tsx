@@ -28,6 +28,23 @@ export const Example: Story = {
   },
 };
 
+export const Loading = {
+  parameters: { controls: { disable: true } },
+  render: () => (
+    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+      <Button style={{ gap: 8 }} variant="primary" loading>
+        Saving
+      </Button>
+      <Button style={{ gap: 8 }} variant="secondary" loading>
+        Loading
+      </Button>
+      <Button style={{ gap: 8 }} variant="ghost" loading>
+        Processing
+      </Button>
+    </div>
+  ),
+};
+
 export const AllVariants = {
   parameters: { controls: { disable: true } },
   render: () => (

@@ -1,7 +1,9 @@
 export { buttonRecipe } from "./Button/Button.recipe";
-export { inputRecipe } from "./Input/Input.recipe";
+export { cardRecipe } from "./Card/Card.recipe";
 export { checkboxRecipe } from "./Checkbox/Checkbox.recipe";
 export { iconRecipe } from "./Icon/Icon.recipe";
+export { inputRecipe } from "./Input/Input.recipe";
+export { modalRecipe } from "./Modal/Modal.recipe";
 export { radioRecipe } from "./Radio/Radio.recipe";
 export { selectRecipe } from "./Select/Select.recipe";
 export { spinnerRecipe } from "./Spinner/Spinner.recipe";

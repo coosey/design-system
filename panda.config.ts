@@ -1,5 +1,18 @@
 import { defineConfig } from "@pandacss/dev";
 import {
+  buttonRecipe,
+  cardRecipe,
+  checkboxRecipe,
+  iconRecipe,
+  inputRecipe,
+  modalRecipe,
+  radioRecipe,
+  selectRecipe,
+  spinnerRecipe,
+  textRecipe,
+  toastRecipe,
+} from "./src/components/atoms/index.ts";
+import {
   colors,
   fonts,
   fontSizes,
@@ -7,16 +20,6 @@ import {
   lineHeights,
   semanticTokens,
 } from "./src/tokens";
-import {
-  buttonRecipe,
-  inputRecipe,
-  checkboxRecipe,
-  radioRecipe,
-  selectRecipe,
-  textRecipe,
-  cardRecipe,
-  modalRecipe,
-} from "./src/components/atoms/index.ts";
 
 export default defineConfig({
   // Whether to use css reset
@@ -35,15 +38,26 @@ export default defineConfig({
       text: ["*"],
       card: ["*"],
       modal: ["*"],
+      toast: ["*"],
+      spinner: ["*"],
+      icon: ["*"],
     },
   },
   theme: {
     extend: {
+      keyframes: {
+        spin: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+      },
       tokens: { colors, fonts, fontSizes, fontWeights, lineHeights },
       semanticTokens,
       recipes: {
         button: buttonRecipe,
         text: textRecipe,
+        spinner: spinnerRecipe,
+        icon: iconRecipe,
       },
       slotRecipes: {
         input: inputRecipe,
@@ -52,6 +66,7 @@ export default defineConfig({
         select: selectRecipe,
         card: cardRecipe,
         modal: modalRecipe,
+        toast: toastRecipe,
       },
     },
   },
