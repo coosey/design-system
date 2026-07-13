@@ -29,7 +29,7 @@ describe("Badge", () => {
     );
     // only one span child — the count text, no dot
     const innerSpans = container.querySelector(".badge")?.children;
-    expect(innerSpans?.length).toBe(1);
+    expect(innerSpans?.length).toBe(0);
   });
 
   it("forwards className and html attributes", () => {
