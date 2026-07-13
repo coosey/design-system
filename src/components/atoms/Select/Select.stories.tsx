@@ -1,13 +1,16 @@
-import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
 import { Select } from "./Select";
-import { SelectTrigger } from "./SelectTrigger";
 import { SelectContent } from "./SelectContent";
 import { SelectOption } from "./SelectOption";
+import { SelectTrigger } from "./SelectTrigger";
 
 const meta = {
   title: "Components/Select",
   component: Select,
+  args: {
+    children: null,
+  },
   argTypes: {
     disabled: { control: "boolean" },
     invalid: { control: "boolean" },

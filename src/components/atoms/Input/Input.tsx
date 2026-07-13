@@ -3,7 +3,8 @@ import { input, type InputVariantProps } from "styled-system/recipes";
 
 export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "size">,
-    InputVariantProps {
+    Omit<InputVariantProps, "invalid"> {
+  invalid?: boolean;
   label?: string;
   errorMessage?: string;
 }

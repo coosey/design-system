@@ -1,11 +1,8 @@
-import { createElement, type HTMLAttributes, type ElementType } from "react";
-import { text, type TextVariantProps } from "styled-system/recipes";
+import { createElement, type ElementType, type HTMLAttributes } from "react";
 import { cx } from "styled-system/css";
+import { text, type TextVariantProps } from "styled-system/recipes";
 
-const defaultElementMap: Record<
-  NonNullable<TextVariantProps["variant"]>,
-  ElementType
-> = {
+const defaultElementMap = {
   display: "h1",
   h1: "h1",
   h2: "h2",
@@ -14,11 +11,14 @@ const defaultElementMap: Record<
   body: "p",
   bodySm: "p",
   caption: "span",
-};
+} as const;
+
+type TextVariant = keyof typeof defaultElementMap;
 
 export interface TextProps
-  extends HTMLAttributes<HTMLElement>,
-    TextVariantProps {
+  extends Omit<HTMLAttributes<HTMLElement>, "color">,
+    Omit<TextVariantProps, "variant"> {
+  variant?: TextVariant;
   as?: ElementType;
 }
 

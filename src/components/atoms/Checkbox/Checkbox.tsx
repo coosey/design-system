@@ -1,7 +1,6 @@
-// Checkbox.tsx
 import { useId, useState, type InputHTMLAttributes } from "react";
-import { checkbox, type CheckboxVariantProps } from "styled-system/recipes";
 import { css } from "styled-system/css";
+import { checkbox, type CheckboxVariantProps } from "styled-system/recipes";
 
 export interface CheckboxProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type">,
