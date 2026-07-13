@@ -1,3 +1,4 @@
+export { badgeRecipe } from "./Badge/Badge.recipe";
 export { buttonRecipe } from "./Button/Button.recipe";
 export { cardRecipe } from "./Card/Card.recipe";
 export { checkboxRecipe } from "./Checkbox/Checkbox.recipe";
