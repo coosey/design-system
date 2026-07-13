@@ -1,5 +1,6 @@
 import { defineConfig } from "@pandacss/dev";
 import {
+  badgeRecipe,
   buttonRecipe,
   cardRecipe,
   checkboxRecipe,
@@ -41,6 +42,7 @@ export default defineConfig({
       toast: ["*"],
       spinner: ["*"],
       icon: ["*"],
+      badge: ["*"],
     },
   },
   theme: {
@@ -58,6 +60,7 @@ export default defineConfig({
         text: textRecipe,
         spinner: spinnerRecipe,
         icon: iconRecipe,
+        badge: badgeRecipe,
       },
       slotRecipes: {
         input: inputRecipe,
