@@ -1,3 +1,4 @@
+export { avatarRecipe } from "./Avatar/Avatar.recipe";
 export { badgeRecipe } from "./Badge/Badge.recipe";
 export { buttonRecipe } from "./Button/Button.recipe";
 export { cardRecipe } from "./Card/Card.recipe";
