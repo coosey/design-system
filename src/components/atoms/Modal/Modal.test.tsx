@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, it, expect, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+import { Button } from "../Button/Button";
 import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
 import { ModalBody } from "./ModalBody";
 import { ModalFooter } from "./ModalFooter";
-import { Button } from "../Button/Button";
+import { ModalHeader } from "./ModalHeader";
 
 function TestModal({
   isOpen = true,
@@ -65,5 +65,11 @@ describe("Modal", () => {
   it("has correct aria role", () => {
     render(<TestModal />);
     expect(screen.getByRole("dialog")).toBeInTheDocument();
+  });
+
+  it("throws when ModalHeader used outside Modal", () => {
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    expect(() => render(<ModalHeader>Title</ModalHeader>)).toThrow();
+    spy.mockRestore();
   });
 });

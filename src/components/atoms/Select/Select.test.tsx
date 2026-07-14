@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, it, expect, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { Select } from "./Select";
-import { SelectTrigger } from "./SelectTrigger";
 import { SelectContent } from "./SelectContent";
 import { SelectOption } from "./SelectOption";
+import { SelectTrigger } from "./SelectTrigger";
 
 function TestSelect({ onChange }: { onChange?: (v: string) => void }) {
   return (
@@ -75,5 +75,11 @@ describe("Select", () => {
     await userEvent.click(screen.getByRole("combobox"));
     await userEvent.click(screen.getByText("Option C"));
     expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it("throws when SelectOption used outside Select", () => {
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    expect(() => render(<SelectOption value="a" label="A" />)).toThrow();
+    spy.mockRestore();
   });
 });

@@ -6,7 +6,7 @@ import { AvatarGroup } from "./AvatarGroup";
 describe("Avatar", () => {
   it("renders image when src is provided", () => {
     render(<Avatar src="https://example.com/photo.jpg" alt="Jane Doe" />);
-    expect(screen.getByRole("img", { name: "Jane Doe" })).toBeInTheDocument();
+    expect(screen.getByAltText("Jane Doe")).toBeInTheDocument();
   });
 
   it("renders initials when name is provided and no src", () => {
@@ -26,9 +26,7 @@ describe("Avatar", () => {
 
   it("falls back to initials when image fails to load", async () => {
     render(<Avatar src="bad-url.jpg" name="Jane Doe" />);
-    const img = screen
-      .getByRole("img", { name: "Jane Doe" })
-      .querySelector("img");
+    const img = screen.getByAltText("Jane Doe");
     img?.dispatchEvent(new Event("error"));
     expect(await screen.findByText("JD")).toBeInTheDocument();
   });
