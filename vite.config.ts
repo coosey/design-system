@@ -1,21 +1,22 @@
-import { defineConfig } from "vite";
-import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from "vitest/config";
 
-// https://vite.dev/config/
 export default defineConfig({
-  presets: [
-    reactCompilerPreset({
-      // exclude glob depends on the preset's filter shape — confirm exact option name
-      // against your installed version, but the intent is: skip **/*.stories.tsx
-    }),
-  ],
   plugins: [
+    tsconfigPaths(),
     react(),
-    babel({ presets: [reactCompilerPreset()] }),
-
-    dts({ rollupTypes: true }),
+    babel({
+      presets: [
+        reactCompilerPreset({
+          compilationMode: "annotation",
+        }),
+      ],
+      exclude: /node_modules/,
+    }),
+    dts({ bundleTypes: true }),
   ],
   build: {
     lib: {
@@ -24,15 +25,12 @@ export default defineConfig({
       fileName: "index",
     },
     rollupOptions: {
-      external: ["react", "react-dom"], // never bundle peer deps into a component library
+      external: ["react", "react-dom"],
     },
   },
   test: {
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/test/setup.ts",
-  },
-  resolve: {
-    tsconfigPaths: true,
   },
 });

@@ -1,6 +1,6 @@
-import { useRef, useEffect, type ReactNode } from "react";
-import { useSelect } from "./Select.context";
+import { useEffect, useRef, type ReactNode } from "react";
 import { select } from "styled-system/recipes";
+import { useSelect } from "./Select.context";
 
 export interface SelectContentProps {
   children: ReactNode;
@@ -28,7 +28,7 @@ export function SelectContent({ children, size }: SelectContentProps) {
   return (
     <ul
       ref={(node) => {
-        (ref as React.MutableRefObject<HTMLUListElement | null>).current = node;
+        (ref as React.RefObject<HTMLUListElement | null>).current = node;
         floatingRef(node);
       }}
       id={contentId}
