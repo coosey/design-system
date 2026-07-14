@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Card, CardHeader, CardBody, CardFooter } from "./Card";
-import { Text } from "../Text/Text";
 import { Button } from "../Button/Button";
+import { Text } from "../Text/Text";
+import { Card, CardBody, CardFooter, CardHeader, type CardProps } from "./Card";
 
-const meta = {
+const meta: Meta<CardProps> = {
   title: "Components/Card",
   component: Card,
   argTypes: {
     variant: { control: "select", options: ["elevated", "outlined", "filled"] },
     size: { control: "select", options: ["sm", "md", "lg"] },
   },
-} satisfies Meta<typeof Card>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

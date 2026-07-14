@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "../Button/Button";
+import type { ToastItem } from "./ToastContext";
 import { ToastProvider } from "./ToastProvider";
 import { useToast } from "./useToast";
 
-const meta = {
+const meta: Meta<ToastItem> = {
   title: "Components/Toast",
   decorators: [
     (Story) => (
@@ -12,7 +13,7 @@ const meta = {
       </ToastProvider>
     ),
   ],
-} satisfies Meta;
+};
 
 export default meta;
 type Story = StoryObj;

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Checkbox } from "./Checkbox";
+import { Checkbox, type CheckboxProps } from "./Checkbox";
 
-const meta = {
+const meta: Meta<CheckboxProps> = {
   title: "Components/Checkbox",
   component: Checkbox,
   argTypes: {
@@ -10,7 +10,7 @@ const meta = {
     disabled: { control: "boolean" },
     defaultChecked: { control: "boolean" },
   },
-} satisfies Meta<typeof Checkbox>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

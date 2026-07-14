@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button } from "./Button";
+import { Button, type ButtonProps } from "./Button";
 
-const meta = {
+const meta: Meta<ButtonProps> = {
   title: "Components/Button",
   component: Button,
   argTypes: {
@@ -13,7 +13,7 @@ const meta = {
     size: { control: "radio", options: ["sm", "md", "lg"] },
     borderRadius: { control: "select", options: ["sm", "md", "lg"] },
   },
-} satisfies Meta<typeof Button>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

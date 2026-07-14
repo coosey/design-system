@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Radio } from "./Radio";
-import { RadioGroup } from "./RadioGroup";
 import { useState } from "react";
+import { Radio, type RadioProps } from "./Radio";
+import { RadioGroup } from "./RadioGroup";
 
-const meta = {
+const meta: Meta<RadioProps> = {
   title: "Components/Radio",
   component: Radio,
   argTypes: {
@@ -11,7 +11,7 @@ const meta = {
     size: { control: "select", options: ["sm", "md", "lg"] },
     disabled: { control: "boolean" },
   },
-} satisfies Meta<typeof Radio>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

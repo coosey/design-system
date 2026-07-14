@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
-import { Select } from "./Select";
+import { Select, type SelectProps } from "./Select";
 import { SelectContent } from "./SelectContent";
 import { SelectOption } from "./SelectOption";
 import { SelectTrigger } from "./SelectTrigger";
 
-const meta = {
+const meta: Meta<SelectProps> = {
   title: "Components/Select",
   component: Select,
   args: {
@@ -15,7 +15,7 @@ const meta = {
     disabled: { control: "boolean" },
     invalid: { control: "boolean" },
   },
-} satisfies Meta<typeof Select>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

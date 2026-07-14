@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Spinner } from "./Spinner";
+import { Spinner, type SpinnerProps } from "./Spinner";
 
-const meta = {
+const meta: Meta<SpinnerProps> = {
   title: "Components/Spinner",
   component: Spinner,
   argTypes: {
@@ -12,7 +12,7 @@ const meta = {
     },
     label: { control: "text" },
   },
-} satisfies Meta<typeof Spinner>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

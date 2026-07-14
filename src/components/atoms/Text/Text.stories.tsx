@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Text } from "./Text";
+import { Text, type TextProps } from "./Text";
 
-const meta = {
+const meta: Meta<TextProps> = {
   title: "Components/Text",
   component: Text,
   argTypes: {
@@ -36,7 +36,7 @@ const meta = {
     truncate: { control: "boolean" },
     children: { control: "text" },
   },
-} satisfies Meta<typeof Text>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,13 +1,13 @@
-import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
-import { ModalBody } from "./ModalBody";
-import { ModalFooter } from "./ModalFooter";
+import { useState } from "react";
 import { Button } from "../Button/Button";
 import { Text } from "../Text/Text";
+import { Modal, type ModalProps } from "./Modal";
+import { ModalBody } from "./ModalBody";
+import { ModalFooter } from "./ModalFooter";
+import { ModalHeader } from "./ModalHeader";
 
-const meta = {
+const meta: Meta<ModalProps> = {
   title: "Components/Modal",
   component: Modal,
   argTypes: {
@@ -16,7 +16,7 @@ const meta = {
     closeOnEscape: { control: "boolean" },
   },
   parameters: { layout: "centered" },
-} satisfies Meta<typeof Modal>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

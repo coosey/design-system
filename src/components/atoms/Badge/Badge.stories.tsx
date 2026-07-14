@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Badge } from "./Badge";
+import { Badge, type BadgeProps } from "./Badge";
 
-const meta = {
+const meta: Meta<BadgeProps> = {
   title: "Components/Badge",
   component: Badge,
   argTypes: {
@@ -15,7 +15,7 @@ const meta = {
     dot: { control: "boolean" },
     children: { control: "text" },
   },
-} satisfies Meta<typeof Badge>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
