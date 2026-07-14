@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Icon } from "./Icon";
+import { Icon, type IconProps } from "./Icon";
 import { icons, type IconName } from "./Icons";
 
 const iconNames = Object.keys(icons) as IconName[];
 
-const meta = {
+const meta: Meta<IconProps> = {
   title: "Components/Icon",
   component: Icon,
   argTypes: {
@@ -25,7 +25,7 @@ const meta = {
       ],
     },
   },
-} satisfies Meta<typeof Icon>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

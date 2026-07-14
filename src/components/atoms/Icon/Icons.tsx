@@ -1,9 +1,8 @@
-import type { ReactElement, SVGProps } from "react";
+import { cloneElement, type JSX, type SVGProps } from "react";
 
-// Note:
-// every icon is a raw SVG with viewBox="0 0 24 24"
-// width/height are intentionally omitted — the wrapper controls sizing
-const icons: Record<string, ReactElement<SVGProps<SVGSVGElement>>> = {
+type IconRenderer = (props: SVGProps<SVGSVGElement>) => JSX.Element;
+
+const icons = {
   check: (
     <svg
       viewBox="0 0 24 24"
@@ -330,11 +329,42 @@ const icons: Record<string, ReactElement<SVGProps<SVGSVGElement>>> = {
   ),
 } as const;
 
-// derive the union type from the registry keys
 export type IconName = keyof typeof icons;
 
-export function getIcon(name: IconName): ReactElement<SVGProps<SVGSVGElement>> {
-  return icons[name];
+const fallbackIcon: IconRenderer = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeDasharray="3 3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path
+      d="M9.5 9a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 3.5"
+      strokeDasharray="none"
+    />
+    <path d="M12 17h.01" strokeDasharray="none" />
+  </svg>
+);
+
+export function getIcon(
+  name: string,
+  props: SVGProps<SVGSVGElement>,
+): JSX.Element {
+  const renderer = icons[name as IconName];
+  if (!renderer) {
+    if (process.env.NODE_ENV !== "production") {
+      console.warn(
+        `[Icon] Unknown icon name: "${name}". Rendering fallback placeholder.`,
+      );
+    }
+    return fallbackIcon(props);
+  }
+  return cloneElement(renderer, props);
 }
 
 export { icons };

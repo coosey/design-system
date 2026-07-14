@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { Icon } from "./Icon";
 
 describe("Icon", () => {
@@ -24,5 +24,21 @@ describe("Icon", () => {
   it("forwards className", () => {
     render(<Icon name="check" className="custom" />);
     expect(document.querySelector(".custom")).toBeInTheDocument();
+  });
+
+  it("handles unknown icon name gracefully", () => {
+    // @ts-expect-error — testing runtime behavior with an invalid name
+    expect(() => render(<Icon name="not-a-real-icon" />)).not.toThrow();
+  });
+
+  it("renders fallback placeholder for unknown icon name", () => {
+    const spy = vi.spyOn(console, "warn").mockImplementation(() => {});
+    // @ts-expect-error — testing runtime behavior with an invalid name
+    render(<Icon name="not-a-real-icon" />);
+    expect(document.querySelector("svg")).toBeInTheDocument();
+    expect(spy).toHaveBeenCalledWith(
+      expect.stringContaining("Unknown icon name"),
+    );
+    spy.mockRestore();
   });
 });
