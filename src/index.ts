@@ -12,3 +12,4 @@ export * from "./components/atoms/Select";
 export * from "./components/atoms/Spinner";
 export * from "./components/atoms/Text";
 export * from "./components/atoms/Toast";
+export * from "./components/atoms/Tooltip";

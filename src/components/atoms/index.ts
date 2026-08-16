@@ -12,3 +12,4 @@ export { selectRecipe } from "./Select/Select.recipe";
 export { spinnerRecipe } from "./Spinner/Spinner.recipe";
 export { textRecipe } from "./Text/Text.recipe";
 export { toastRecipe } from "./Toast/Toast.recipe";
+export { tooltipRecipe } from "./Tooltip/Tooltip.recipe";

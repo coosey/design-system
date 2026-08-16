@@ -14,6 +14,7 @@ import {
   spinnerRecipe,
   textRecipe,
   toastRecipe,
+  tooltipRecipe,
 } from "./src/components/atoms/index.ts";
 import {
   colors,
@@ -46,6 +47,7 @@ export default defineConfig({
       icon: ["*"],
       badge: ["*"],
       avatar: ["*"],
+      tooltip: ["*"],
       divider: ["*"],
     },
   },
@@ -76,6 +78,7 @@ export default defineConfig({
         modal: modalRecipe,
         toast: toastRecipe,
         avatar: avatarRecipe,
+        tooltip: tooltipRecipe,
       },
     },
   },
