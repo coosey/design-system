@@ -5,6 +5,7 @@ import {
   buttonRecipe,
   cardRecipe,
   checkboxRecipe,
+  dividerRecipe,
   iconRecipe,
   inputRecipe,
   modalRecipe,
@@ -45,6 +46,7 @@ export default defineConfig({
       icon: ["*"],
       badge: ["*"],
       avatar: ["*"],
+      divider: ["*"],
     },
   },
   theme: {
@@ -63,6 +65,7 @@ export default defineConfig({
         spinner: spinnerRecipe,
         icon: iconRecipe,
         badge: badgeRecipe,
+        divider: dividerRecipe,
       },
       slotRecipes: {
         input: inputRecipe,

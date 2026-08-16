@@ -3,6 +3,7 @@ export { badgeRecipe } from "./Badge/Badge.recipe";
 export { buttonRecipe } from "./Button/Button.recipe";
 export { cardRecipe } from "./Card/Card.recipe";
 export { checkboxRecipe } from "./Checkbox/Checkbox.recipe";
+export { dividerRecipe } from "./Divider/Divider.recipe";
 export { iconRecipe } from "./Icon/Icon.recipe";
 export { inputRecipe } from "./Input/Input.recipe";
 export { modalRecipe } from "./Modal/Modal.recipe";
