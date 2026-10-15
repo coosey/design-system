@@ -16,6 +16,7 @@ import {
   toastRecipe,
   tooltipRecipe,
 } from "./src/components/atoms/index.ts";
+import { formFieldRecipe } from "./src/components/molecules/index.ts";
 import {
   colors,
   fonts,
@@ -49,6 +50,7 @@ export default defineConfig({
       avatar: ["*"],
       tooltip: ["*"],
       divider: ["*"],
+      formField: ["*"],
     },
   },
   theme: {
@@ -79,6 +81,7 @@ export default defineConfig({
         toast: toastRecipe,
         avatar: avatarRecipe,
         tooltip: tooltipRecipe,
+        formField: formFieldRecipe,
       },
     },
   },
