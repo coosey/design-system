@@ -15,3 +15,4 @@ export * from "./components/atoms/Toast";
 export * from "./components/atoms/Tooltip";
 
 export * from "./components/molecules/FormField";
+export * from "./components/molecules/SearchField";
