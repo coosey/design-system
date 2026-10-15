@@ -1,12 +1,10 @@
 import babel from "@rolldown/plugin-babel";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
-import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   plugins: [
-    tsconfigPaths(),
     react(),
     babel({
       presets: [
@@ -32,5 +30,8 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/test/setup.ts",
+  },
+  resolve: {
+    tsconfigPaths: true,
   },
 });
