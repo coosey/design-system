@@ -1,7 +1,7 @@
 import { defineRecipe } from "@pandacss/dev";
 
 export const dividerRecipe = defineRecipe({
-  className: "divider",
+  className: "separator",
   staticCss: ["*"],
   base: {
     border: "none",

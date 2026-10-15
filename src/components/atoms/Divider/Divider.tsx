@@ -1,10 +1,10 @@
 import type { HTMLAttributes } from "react";
 import { css, cx } from "styled-system/css";
-import { divider, type DividerVariantProps } from "styled-system/recipes";
+import { separator, type SeparatorVariantProps } from "styled-system/recipes";
 
 export interface DividerProps
-  extends Omit<HTMLAttributes<HTMLElement>, keyof DividerVariantProps>,
-    DividerVariantProps {
+  extends Omit<HTMLAttributes<HTMLElement>, keyof SeparatorVariantProps>,
+    SeparatorVariantProps {
   label?: string;
 }
 
@@ -41,7 +41,7 @@ export function Divider({
         {...rest}
       >
         <span
-          className={divider({ orientation, variant, spacing: "none" })}
+          className={separator({ orientation, variant, spacing: "none" })}
           style={{ flex: 1 }}
         />
         <span
@@ -55,7 +55,7 @@ export function Divider({
           {label}
         </span>
         <span
-          className={divider({ orientation, variant, spacing: "none" })}
+          className={separator({ orientation, variant, spacing: "none" })}
           style={{ flex: 1 }}
         />
       </div>
@@ -66,7 +66,7 @@ export function Divider({
     <hr
       role="separator"
       aria-orientation={orientation ?? "horizontal"}
-      className={cx(divider({ orientation, variant, spacing }), className)}
+      className={cx(separator({ orientation, variant, spacing }), className)}
       {...rest}
     />
   );

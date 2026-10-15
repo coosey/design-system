@@ -49,7 +49,7 @@ export default defineConfig({
       badge: ["*"],
       avatar: ["*"],
       tooltip: ["*"],
-      divider: ["*"],
+      separator: ["*"],
       formField: ["*"],
     },
   },
@@ -69,7 +69,7 @@ export default defineConfig({
         spinner: spinnerRecipe,
         icon: iconRecipe,
         badge: badgeRecipe,
-        divider: dividerRecipe,
+        separator: dividerRecipe,
       },
       slotRecipes: {
         input: inputRecipe,
