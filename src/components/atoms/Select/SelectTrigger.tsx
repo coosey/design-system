@@ -1,12 +1,18 @@
 // SelectTrigger.tsx
-import { useSelect } from "./Select.context";
 import { select, type SelectVariantProps } from "styled-system/recipes";
+import { useSelect } from "./Select.context";
 
 export interface SelectTriggerProps extends SelectVariantProps {
   placeholder?: string;
+  id?: string;
 }
 
-export function SelectTrigger({ placeholder, size }: SelectTriggerProps) {
+export function SelectTrigger({
+  placeholder,
+  size,
+  id,
+  ...rest
+}: SelectTriggerProps) {
   const {
     isOpen,
     selectedLabel,
@@ -18,11 +24,13 @@ export function SelectTrigger({ placeholder, size }: SelectTriggerProps) {
     getReferenceProps,
   } = useSelect();
 
+  const resolvedId = id ?? triggerId;
+
   const styles = select({ size });
 
   return (
     <button
-      id={triggerId}
+      id={resolvedId}
       ref={triggerRef}
       type="button"
       role="combobox"
@@ -36,6 +44,7 @@ export function SelectTrigger({ placeholder, size }: SelectTriggerProps) {
       data-disabled={disabled || undefined}
       className={styles.trigger}
       {...getReferenceProps()}
+      {...rest}
     >
       <span className={selectedLabel ? styles.value : styles.placeholder}>
         {selectedLabel ?? placeholder ?? "Select an option"}

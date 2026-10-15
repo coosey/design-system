@@ -1,10 +1,10 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import { select } from "styled-system/recipes";
+import { select, type SelectVariantProps } from "styled-system/recipes";
 import { useSelect } from "./Select.context";
 
 export interface SelectContentProps {
   children: ReactNode;
-  size?: "sm" | "md" | "lg";
+  size?: SelectVariantProps["size"];
 }
 
 export function SelectContent({ children, size }: SelectContentProps) {

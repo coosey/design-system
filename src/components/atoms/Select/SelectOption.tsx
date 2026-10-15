@@ -1,12 +1,12 @@
 import { useEffect } from "react";
+import { select, type SelectVariantProps } from "styled-system/recipes";
 import { useSelect } from "./Select.context";
-import { select } from "styled-system/recipes";
 
 export interface SelectOptionProps {
   value: string;
   label: string;
   disabled?: boolean;
-  size?: "sm" | "md" | "lg";
+  size?: SelectVariantProps["size"];
 }
 
 export function SelectOption({
